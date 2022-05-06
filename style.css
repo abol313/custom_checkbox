@@ -30,9 +30,11 @@ body{
 /*you can style your own style when checked*/
 .p_radio{
     /*to do : when checkbox is in default (off|unchecked)*/
+    background-color:rgba(0, 255, 255, 0.2);
 }
 .p_radio[checked]{
     /*to do : when checkbox is in checked (on)*/
+    background-color:rgba(0, 255, 255, 0.4);
 }
 
 
