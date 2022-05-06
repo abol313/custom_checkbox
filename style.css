@@ -1,0 +1,55 @@
+/*<!--In the name of kindly generous ALLAH-->
+<!--Thanks ALLAH-->
+*/
+
+body{
+    background-color:#151515;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    margin:0;
+    align-items:center;
+    justify-content:center;
+}
+
+.p_radio{
+    margin:10px;
+    position:relative;
+    width:150px;
+    height:50px;
+    border-radius:50px;
+    background-color:rgba(0,255,255,.2);
+    color:cyan;
+    font-size:2em;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.on,.off{
+    width:50px;
+    height:50px;
+    margin:0;
+}
+.on{
+    background-image: url( "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><path stroke-width='5' stroke-linecap='round' stroke='cyan' fill='none' d='M25 45 v-40'/></svg>" );
+    background-size:40px 40px;
+    background-position: center;
+    background-repeat:no-repeat;
+    z-index: 3;
+    order:1;
+}
+.off{
+    background-image: url( "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><path stroke-width='5' stroke-linecap='round' stroke='cyan' fill='none' d='M25 45 a20 20 0 0 1 0 -40 a20 20 0 0 1 0 40'/></svg>" );
+    background-size:40px 40px;
+    background-position: center;
+    background-repeat:no-repeat;
+    z-index: 3;
+}
+.selector{
+    position:absolute;
+    width:50px;
+    height:50px;
+    background-color:cyan;
+    border-radius:50px;
+}
