@@ -21,13 +21,15 @@ for (let i = 0; i < selectors.length; i++) {
     checkBox.t = t
     checkBox.isOn = isOn
     checkBox.index = i
+    checkBox.self = checkBox.selector.parentElement
+    checkBox.self.setAttribute("checked", "")
 
     checkBox.on.addEventListener("click", () => toggleOn(i))
     checkBox.off.addEventListener("click", () => toggleOff(i))
-    checkBox.selector.parentElement.addEventListener("click",()=>{
-        checkBoxes[i].isOn?toggleOff(i):toggleOn(i)
+    // checkBox.self.addEventListener("click",()=>{
+    //     checkBoxes[i].isOn?toggleOff(i):toggleOn(i)
 
-    })
+    // })
 
     checkBoxes.push(checkBox)
 }
@@ -99,9 +101,11 @@ function render(index, t) {
 function toggleColor(index, isOn) {
     let checkBox = checkBoxes[index]
     if (isOn) {
+        checkBox.self.setAttribute("checked", "")
         checkBox.on.style.backgroundImage = `url( "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><path stroke-width='5' stroke-linecap='round' stroke='%23044' fill='none' d='M25 45 v-40'/></svg>" )`
         checkBox.off.style.backgroundImage = `url( "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><path stroke-width='5' stroke-linecap='round' stroke='cyan' fill='none' d='M25 45 a20 20 0 0 1 0 -40 a20 20 0 0 1 0 40'/></svg>" )`
     } else {
+        checkBox.self.removeAttribute("checked")
         checkBox.on.style.backgroundImage = `url( "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><path stroke-width='5' stroke-linecap='round' stroke='cyan' fill='none' d='M25 45 v-40'/></svg>" )`
         checkBox.off.style.backgroundImage = `url( "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><path stroke-width='5' stroke-linecap='round' stroke='%23044' fill='none' d='M25 45 a20 20 0 0 1 0 -40 a20 20 0 0 1 0 40'/></svg>" )`
     }
